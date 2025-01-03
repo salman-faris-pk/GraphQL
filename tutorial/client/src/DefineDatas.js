@@ -20,7 +20,7 @@ export const QUERY_ALL_USERS=gql`
 
 
 export const QUERY_ALL_MOVIES=gql`
-    query AllMovies {
+    query GetAllMovies {
       movies {
        id
        name
@@ -38,4 +38,17 @@ export const MOVIES_BY_NAME=gql`
          yearOfPublication
      }
    }
+`;
+
+
+
+export const USER_MUTATION = gql`
+  mutation CreateUser ($input : CreateUserInput!) {
+    createUser(input: $input){
+      name
+      username
+      age
+      nationality
+    }
+  }
 `;
